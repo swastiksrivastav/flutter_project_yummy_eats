@@ -61,59 +61,34 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            'assets/images/apna_dhaba.jpg',
-                            fit: BoxFit.cover,
+                        child: Stack(children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              'assets/images/apna_dhaba.jpg',
+                              fit: BoxFit.cover,
+                              height: double.infinity,
+                            ),
                           ),
-                        ),
+                          // ignore: prefer_const_constructors
+                          Positioned(
+                            top: 155,
+                            left: 11,
+                            // ignore: prefer_const_constructors
+                            child: Center(
+                              // ignore: prefer_const_constructors
+                              child: Text(
+                                'Apna Dhaba',
+                                // ignore: prefer_const_constructors
+                                style: TextStyle(
+                                    fontFamily: 'Font1',
+                                    color: Colors.white,
+                                    fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ]),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          width: 130,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(
-                              'assets/images/mini_punjab.jpg',
-                              fit: BoxFit.cover,
-                            ),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          width: 130,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(
-                              'assets/images/food_hub.jpg',
-                              fit: BoxFit.cover,
-                            ),
-                          )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          width: 130,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset(
-                              'assets/images/sweet_shop.png',
-                              fit: BoxFit.cover,
-                            ),
-                          )),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -122,7 +97,139 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20)),
+                        child: Stack(children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              'assets/images/mini_punjab.jpg',
+                              fit: BoxFit.cover,
+                              height: double.infinity,
+                            ),
+                          ),
+                          // ignore: prefer_const_constructors
+                          Positioned(
+                            top: 155,
+                            left: 11,
+                            // ignore: prefer_const_constructors
+                            child: Center(
+                              // ignore: prefer_const_constructors
+                              child: Text(
+                                'Mini Punjab',
+                                // ignore: prefer_const_constructors
+                                style: TextStyle(
+                                    fontFamily: 'Font1',
+                                    color: Colors.white,
+                                    fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ]),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          width: 130,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Stack(children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                'assets/images/food_hub.jpg',
+                                fit: BoxFit.cover,
+                                height: double.infinity,
+                              ),
+                            ),
+                            // ignore: prefer_const_constructors
+                            Positioned(
+                              top: 155,
+                              left: 20,
+                              // ignore: prefer_const_constructors
+                              child: Center(
+                                // ignore: prefer_const_constructors
+                                child: Text(
+                                  'Food Hub',
+                                  // ignore: prefer_const_constructors
+                                  style: TextStyle(
+                                      fontFamily: 'Font1',
+                                      color: Colors.white,
+                                      fontSize: 20),
+                                ),
+                              ),
+                            ),
+                          ])),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          width: 130,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Stack(children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                'assets/images/sweet_shop.png',
+                                fit: BoxFit.cover,
+                                height: double.infinity,
+                              ),
+                            ),
+                            // ignore: prefer_const_constructors
+                            Positioned(
+                              top: 155,
+                              left: 11,
+                              // ignore: prefer_const_constructors
+                              child: Center(
+                                // ignore: prefer_const_constructors
+                                child: Text(
+                                  'Sweet Shop',
+                                  // ignore: prefer_const_constructors
+                                  style: TextStyle(
+                                      fontFamily: 'Font1',
+                                      color: Colors.white,
+                                      fontSize: 20),
+                                ),
+                              ),
+                            ),
+                          ])),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                          width: 130,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Stack(children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                'assets/images/cake_shop.jpg',
+                                fit: BoxFit.cover,
+                                height: double.infinity,
+                              ),
+                            ),
+                            // ignore: prefer_const_constructors
+                            Positioned(
+                              top: 155,
+                              left: 16,
+                              // ignore: prefer_const_constructors
+                              child: Center(
+                                // ignore: prefer_const_constructors
+                                child: Text(
+                                  'Cake Shop',
+                                  // ignore: prefer_const_constructors
+                                  style: TextStyle(
+                                      fontFamily: 'Font1',
+                                      color: Colors.white,
+                                      fontSize: 20),
+                                ),
+                              ),
+                            ),
+                          ])),
                     ),
                   ],
                 ),
@@ -195,6 +302,30 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                     ),
                   ],
                 ),
+              ),
+              // ignore: prefer_const_constructors
+              SizedBox(
+                height: 30,
+              ),
+              // ignore: sized_box_for_whitespace
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white,
+              ),
+              // ignore: prefer_const_constructors
+              SizedBox(
+                height: 20,
+              ),
+              // ignore: sized_box_for_whitespace
+              Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white,
+              ),
+              // ignore: prefer_const_constructors
+              SizedBox(
+                height: 20,
               )
             ],
           ),
