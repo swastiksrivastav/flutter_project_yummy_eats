@@ -27,7 +27,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
             style: TextStyle(fontFamily: 'Font1', fontSize: 40),
           )),
         ),
-        backgroundColor: Colors.lightBlue[800],
+        backgroundColor: Color.fromARGB(255, 3, 46, 106),
         // ignore: prefer_const_constructors
         body: SingleChildScrollView(
           child: Column(
@@ -60,10 +60,13 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                         width: 130,
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Color.fromARGB(255, 236, 209, 4),
+                                width: 2)),
                         child: Stack(children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(18),
                             child: Image.asset(
                               'assets/images/apna_dhaba.jpg',
                               fit: BoxFit.cover,
@@ -72,8 +75,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                           ),
                           // ignore: prefer_const_constructors
                           Positioned(
-                            top: 155,
-                            left: 11,
+                            top: 150,
+                            left: 8,
                             // ignore: prefer_const_constructors
                             child: Center(
                               // ignore: prefer_const_constructors
@@ -95,11 +98,15 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                       child: Container(
                         width: 130,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
+                          color: Colors.white,
+                          border: Border.all(
+                              color: Color.fromARGB(255, 236, 209, 4),
+                              width: 2),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                         child: Stack(children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(18),
                             child: Image.asset(
                               'assets/images/mini_punjab.jpg',
                               fit: BoxFit.cover,
@@ -108,8 +115,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                           ),
                           // ignore: prefer_const_constructors
                           Positioned(
-                            top: 155,
-                            left: 11,
+                            top: 150,
+                            left: 10,
                             // ignore: prefer_const_constructors
                             child: Center(
                               // ignore: prefer_const_constructors
@@ -144,7 +151,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             ),
                             // ignore: prefer_const_constructors
                             Positioned(
-                              top: 155,
+                              top: 150,
                               left: 20,
                               // ignore: prefer_const_constructors
                               child: Center(
@@ -179,7 +186,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             ),
                             // ignore: prefer_const_constructors
                             Positioned(
-                              top: 155,
+                              top: 150,
                               left: 11,
                               // ignore: prefer_const_constructors
                               child: Center(
@@ -214,7 +221,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             ),
                             // ignore: prefer_const_constructors
                             Positioned(
-                              top: 155,
+                              top: 150,
                               left: 16,
                               // ignore: prefer_const_constructors
                               child: Center(
@@ -308,20 +315,186 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                 height: 30,
               ),
               // ignore: sized_box_for_whitespace
-              Container(
-                height: 200,
-                width: double.infinity,
-                color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+
+                      // ignore: prefer_const_constructors
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                              color: Color.fromARGB(255, 236, 209, 4),
+                              width: 5)),
+                    ),
+                    Positioned(
+                      top: 15,
+                      right: 15,
+                      child: Container(
+                        width: 200,
+                        height: 170,
+                        // ignore: prefer_const_constructors
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            'assets/images/apna_dhaba.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 30,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          'Apna Dhaba',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 70,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          'North Indian',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 110,
+                        left: 30,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          '20-25 min',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 115,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Icon(
+                          Icons.access_time,
+                          size: 20,
+                          color: Colors.blueAccent,
+                        )),
+                  ],
+                ),
               ),
+
               // ignore: prefer_const_constructors
               SizedBox(
                 height: 20,
               ),
               // ignore: sized_box_for_whitespace
-              Container(
-                height: 200,
-                width: double.infinity,
-                color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: double.infinity,
+
+                      // ignore: prefer_const_constructors
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Color.fromARGB(255, 236, 209, 4),
+                            width: 5,
+                          )),
+                    ),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 30,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          'Mini Punjab',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 70,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          'North Indian',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 110,
+                        left: 30,
+                        // ignore: prefer_const_constructors
+                        child: Text(
+                          '30-35 min',
+                          // ignore: prefer_const_constructors
+                          style: TextStyle(
+                              fontFamily: 'Font1',
+                              fontSize: 20,
+                              color: Colors.blueAccent),
+                        )),
+                    // ignore: prefer_const_constructors
+                    Positioned(
+                        top: 115,
+                        left: 10,
+                        // ignore: prefer_const_constructors
+                        child: Icon(
+                          Icons.access_time,
+                          size: 20,
+                          color: Colors.blueAccent,
+                        )),
+                    Positioned(
+                      top: 15,
+                      right: 15,
+                      child: Container(
+                        width: 200,
+                        height: 170,
+                        // ignore: prefer_const_constructors
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            'assets/images/mini_punjab.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
               // ignore: prefer_const_constructors
               SizedBox(

@@ -17,15 +17,18 @@ class _FavouritePageState extends State<FavouritePage> {
     // ignore: prefer_const_constructors
     return Scaffold(
         appBar: AppBar(
+          // ignore: prefer_const_constructors
           title: Text('Favourites'),
         ),
         backgroundColor: Colors.lightBlue[800],
+        // ignore: prefer_const_constructors
         body: Text('This is the favourites page'),
         bottomNavigationBar: BottomNavigationBar(
           // ignore: prefer_const_literals_to_create_immutables
           items: [
             // ignore: prefer_const_constructors
             BottomNavigationBarItem(
+              // ignore: prefer_const_constructors
               icon: Icon(Icons.home),
               label: 'Home',
             ),
