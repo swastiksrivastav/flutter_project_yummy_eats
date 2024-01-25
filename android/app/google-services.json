@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "159679742036",
+    "project_id": "yummy-eats-c9471",
+    "storage_bucket": "yummy-eats-c9471.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159679742036:android:ea6993423963d488b4adc1",
+        "android_client_info": {
+          "package_name": "com.example.yummy_eats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWgTUCh28xx4qGjRKDybfP7wA3GgRYZyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
