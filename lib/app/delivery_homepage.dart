@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yummy_eats/app/cart.dart';
+import 'package:yummy_eats/app/apna_dhaba.dart';
+
 import 'package:yummy_eats/app/favourites.dart';
 import 'package:yummy_eats/app/firebase_search_optn.dart';
 import 'package:yummy_eats/app/profile.dart';
@@ -18,6 +19,18 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
   List<Map<String, dynamic>> searchResults = [];
 
   @override
+  void initState() {
+    super.initState();
+
+    // Call the function from another file when the widget is initialized
+    _callAddRestaurantsData();
+  }
+
+  Future<void> _callAddRestaurantsData() async {
+    await FirestoreService.addRestaurantsData();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -30,7 +43,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
             style: TextStyle(fontFamily: 'Font1', fontSize: 40),
           )),
         ),
-        backgroundColor: Color.fromARGB(255, 3, 46, 106),
+        backgroundColor: const Color.fromARGB(255, 3, 46, 106),
         // ignore: prefer_const_constructors
         body: Stack(children: [
           SingleChildScrollView(
@@ -43,7 +56,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                     controller: _searchController,
                     onChanged: (query) {
                       // Call a function to update search results based on the query
-                      //updateSearchResults(query);
+                      updateSearchResults(query);
                     },
                     // ignore: prefer_const_constructors
                     decoration: InputDecoration(
@@ -58,13 +71,14 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
 
                             // ignore: prefer_const_constructors
                             borderSide: BorderSide(
-                                color: Color.fromARGB(255, 236, 209, 4))),
+                                color: const Color.fromARGB(255, 236, 209, 4))),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20),
 
                             // ignore: prefer_const_constructors
                             borderSide: BorderSide(
-                                color: Color.fromARGB(255, 236, 209, 4)))),
+                                color:
+                                    const Color.fromARGB(255, 236, 209, 4)))),
                   ),
                 ),
                 // ignore: prefer_const_constructors
@@ -96,16 +110,26 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                  color: Color.fromARGB(255, 236, 209, 4),
+                                  color: const Color.fromARGB(255, 236, 209, 4),
                                   width: 2)),
                           child: Stack(children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(18),
-                              child: Image.asset(
-                                'assets/images/apna_dhaba.jpg',
-                                fit: BoxFit.cover,
-                                height: double.infinity,
-                              ),
+                              child: Builder(builder: (context) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (context) =>
+                                            // ignore: prefer_const_constructors
+                                            ApnaDhabaMenuPage()));
+                                  },
+                                  child: Image.asset(
+                                    'assets/images/apna_dhaba.jpg',
+                                    fit: BoxFit.cover,
+                                    height: double.infinity,
+                                  ),
+                                );
+                              }),
                             ),
                             // ignore: prefer_const_constructors
                             Positioned(
@@ -134,7 +158,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                           decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
-                                color: Color.fromARGB(255, 236, 209, 4),
+                                color: const Color.fromARGB(255, 236, 209, 4),
                                 width: 2),
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -174,7 +198,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 236, 209, 4),
+                                    color:
+                                        const Color.fromARGB(255, 236, 209, 4),
                                     width: 2),
                                 borderRadius: BorderRadius.circular(20)),
                             child: Stack(children: [
@@ -212,7 +237,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 236, 209, 4),
+                                    color:
+                                        const Color.fromARGB(255, 236, 209, 4),
                                     width: 2),
                                 borderRadius: BorderRadius.circular(20)),
                             child: Stack(children: [
@@ -250,7 +276,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 236, 209, 4),
+                                    color:
+                                        const Color.fromARGB(255, 236, 209, 4),
                                     width: 2),
                                 borderRadius: BorderRadius.circular(20)),
                             child: Stack(children: [
@@ -299,7 +326,7 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                 SizedBox(
                   height: 30,
                 ),
-                Container(
+                SizedBox(
                   height: 200,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
@@ -387,10 +414,19 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                               topLeft: Radius.circular(20),
                               // ignore: prefer_const_constructors
                               topRight: Radius.circular(20)),
-                          child: Image.asset(
-                            'assets/images/apna_dhaba.jpg',
-                            fit: BoxFit.cover,
-                          ),
+                          child: Builder(builder: (context) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    // ignore: prefer_const_constructors
+                                    builder: (context) => ApnaDhabaMenuPage()));
+                              },
+                              child: Image.asset(
+                                'assets/images/apna_dhaba.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            );
+                          }),
                         ),
                       ),
                       // ignore: prefer_const_constructors
@@ -431,7 +467,8 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                           // ignore: prefer_const_constructors
                           child: Text(
                             '20-25 min',
-                            style: TextStyle(fontFamily: 'Font1', fontSize: 18),
+                            style: const TextStyle(
+                                fontFamily: 'Font1', fontSize: 18),
                           )),
                     ],
                   ),
@@ -569,22 +606,19 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
           items: [
             // ignore: prefer_const_constructors
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               label: 'Home',
             ),
             // ignore: prefer_const_constructors
             BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
+              icon: const Icon(Icons.favorite),
               label: 'Favorites',
             ),
             // ignore: prefer_const_constructors
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Favorites',
-            ),
+
             // ignore: prefer_const_constructors
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: const Icon(Icons.person),
               label: 'Profile',
             ),
           ],
@@ -604,30 +638,30 @@ class _FoodDeliveryHomePageState extends State<FoodDeliveryHomePage> {
                         builder: (context) => FoodDeliveryHomePage()));
                 break;
               case 1:
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FavouritePage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FavouritePage()));
                 break;
               case 2:
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CartPage()));
-                break;
-              case 3:
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()));
                 break;
             }
           },
         ));
   }
 
-  // void updateSearchResults(String query) async {
-  //   // Call methods from FirestoreService for searching
-  //   List<Map<String, dynamic>> results =
-  //       await FirestoreService.searchRestaurants(query);
+  void updateSearchResults(String query) async {
+    // Call methods from FirestoreService for searching
+    List<Map<String, dynamic>> results =
+        await FirestoreService.searchRestaurants(query);
 
-  //   setState(() {
-  //     // Update searchResults with the new results
-  //     searchResults = results;
-  //   });
-  // }
+    setState(() {
+      // Update searchResults with the new results
+      searchResults = results;
+    });
+  }
 }

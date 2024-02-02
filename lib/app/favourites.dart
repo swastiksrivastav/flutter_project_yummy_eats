@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yummy_eats/app/cart.dart';
+
 import 'package:yummy_eats/app/delivery_homepage.dart';
 import 'package:yummy_eats/app/profile.dart';
 
@@ -38,10 +38,7 @@ class _FavouritePageState extends State<FavouritePage> {
               label: 'Favorites',
             ),
             // ignore: prefer_const_constructors
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Favorites',
-            ),
+
             // ignore: prefer_const_constructors
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
@@ -68,10 +65,6 @@ class _FavouritePageState extends State<FavouritePage> {
                     MaterialPageRoute(builder: (context) => FavouritePage()));
                 break;
               case 2:
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CartPage()));
-                break;
-              case 3:
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfilePage()));
                 break;
